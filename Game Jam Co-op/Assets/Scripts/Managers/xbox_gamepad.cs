@@ -265,6 +265,16 @@ public class xbox_gamepad : MonoBehaviour {
         return (LT.current_value >= 0.1) ? true : false;
     }
 
+    public bool GetTriggerUp_L()
+    {
+        return (LT.prev_value >= 0.1f && LT.current_value == 0f) ? true : false;
+    }
+
+    public bool GetTriggerUp_R()
+    {
+        return (RT.prev_value >= 0.1f && RT.current_value == 0f) ? true : false;
+    }
+
     //checks if left trigger was tapped on current frame.
     public bool GetTriggerTap_L()
     {
