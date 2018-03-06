@@ -1,0 +1,172 @@
+fileFormatVersion: 2
+guid: 724d9e0ee98298445b6499cb4b91d855
+timeCreated: 1520297443
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Barrelspin
+    100002: Cannon
+    100004: footL
+    100006: footR
+    100008: Gatgauss
+    100010: Gatgun
+    100012: Gatgunbarrels
+    100014: Gaussrail_Pivot
+    100016: Gunner
+    100018: Gunnerseat
+    100020: HIPL
+    100022: HIPR
+    100024: Hips
+    100026: Hips 1
+    100028: KneeL
+    100030: KneeR
+    100032: Pilot
+    100034: ShinL
+    100036: ShinR
+    100038: ThighL
+    100040: ThighR
+    100042: Torso2
+    100044: //RootNode
+    400000: Barrelspin
+    400002: Cannon
+    400004: footL
+    400006: footR
+    400008: Gatgauss
+    400010: Gatgun
+    400012: Gatgunbarrels
+    400014: Gaussrail_Pivot
+    400016: Gunner
+    400018: Gunnerseat
+    400020: HIPL
+    400022: HIPR
+    400024: Hips
+    400026: Hips 1
+    400028: KneeL
+    400030: KneeR
+    400032: Pilot
+    400034: ShinL
+    400036: ShinR
+    400038: ThighL
+    400040: ThighR
+    400042: Torso2
+    400044: //RootNode
+    2100000: lambert1
+    2300000: Cannon
+    2300002: footL
+    2300004: footR
+    2300006: Gatgun
+    2300008: Gatgunbarrels
+    2300010: Gunnerseat
+    2300012: HIPL
+    2300014: HIPR
+    2300016: Hips 1
+    2300018: ShinL
+    2300020: ShinR
+    2300022: Torso2
+    3300000: Cannon
+    3300002: footL
+    3300004: footR
+    3300006: Gatgun
+    3300008: Gatgunbarrels
+    3300010: Gunnerseat
+    3300012: HIPL
+    3300014: HIPR
+    3300016: Hips 1
+    3300018: ShinL
+    3300020: ShinR
+    3300022: Torso2
+    4300000: ShinL
+    4300002: footL
+    4300004: HIPL
+    4300006: ShinR
+    4300008: footR
+    4300010: HIPR
+    4300012: Hips
+    4300014: Torso2
+    4300016: Cannon
+    4300018: Gatgunbarrels
+    4300020: Gatgun
+    4300022: Gunnerseat
+    7400000: Take 001
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
