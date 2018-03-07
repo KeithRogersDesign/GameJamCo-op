@@ -32,7 +32,7 @@ public class BulletScript : MonoBehaviour {
     {
         if(coll.gameObject.tag == "Enemy")
         {
-
+            Destroy(coll.gameObject);
         }
     }
 }

@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Terrain
+  - Enemy
+  - Bullet
+  - Mechboy
   layers:
   - Default
   - TransparentFX

@@ -212,9 +212,8 @@ public class PlayerController : MonoBehaviour {
             }
             //----------------------------------------------------------------
         }
-      
-        Debug.Log("X stick value: " + forwardAcceleration);
-        Debug.Log(grounded);
+
+        Debug.Log("Overheat: " + playerOverheat.overheatValue);
     }
 
     private void FixedUpdate()
@@ -254,17 +253,26 @@ public class PlayerController : MonoBehaviour {
         switch(playerNumber)
         {
             case 1:
-                if (grounded)
-                {
-                    if (forwardAcceleration > 0)
+                //if (grounded)
+                //{
+                    if (forwardAcceleration > 0 && mechBody.velocity.magnitude < 30)
                     {
-                        lowerBody.transform.Translate(-playerMech.transform.right * moveValue * movementSpeed);
+                    //  lowerBody.transform.Translate(-playerMech.transform.right * moveValue * movementSpeed);
+                    mechBody.AddForce(-lowerBody.transform.right * moveValue * (movementSpeed * 0.3f));
 
                     }
-                    else if (forwardAcceleration < 0)
+                    else if (forwardAcceleration < 0 && mechBody.velocity.magnitude < 30)
                     {
-                        lowerBody.transform.Translate(-playerMech.transform.right * moveValue * movementSpeed);
+                    mechBody.AddForce(-lowerBody.transform.right * moveValue * (movementSpeed * 0.3f));
+                    //    lowerBody.transform.Translate(-playerMech.transform.right * moveValue * movementSpeed);
                     }
+
+                    if(mechBody.velocity.magnitude > 30)
+                {
+                    mechBody.velocity = mechBody.velocity.normalized * 30;
+                }    
+
+
 
                     if (turnValueX > 0)
                     {
@@ -274,27 +282,27 @@ public class PlayerController : MonoBehaviour {
                     {
                         lowerBody.transform.Rotate(playerMech.transform.up * turnValueX * rotationSpeed);
                     }
-                }
-                else if(!grounded)
-                {
-                    if (moveValue > 0.1f || moveValue < -0.1f)
-                    {
-                        lowerBody.transform.Translate(-playerMech.transform.forward * accelerationOnExit * movementSpeed);
-                    }
+            //    }
+                //else if(!grounded)
+                //{
+                //    if (moveValue > 0.1f || moveValue < -0.1f)
+                //    {
+                //        lowerBody.transform.Translate(-playerMech.transform.forward * accelerationOnExit * movementSpeed);
+                //    }
               
             
-                       // lowerBody.transform.Translate(-playerMech.transform.forward  * movementSpeed);
+                //       // lowerBody.transform.Translate(-playerMech.transform.forward  * movementSpeed);
                  
 
-                    if (turnValueX > 0)
-                    {
-                        lowerBody.transform.Rotate(playerMech.transform.up);
-                    }
-                    else if (turnValueX < 0)
-                    {
-                        lowerBody.transform.Rotate(playerMech.transform.up);
-                    }
-                }
+                //    if (turnValueX > 0)
+                //    {
+                //        lowerBody.transform.Rotate(playerMech.transform.up);
+                //    }
+                //    else if (turnValueX < 0)
+                //    {
+                //        lowerBody.transform.Rotate(playerMech.transform.up);
+                //    }
+             //   }
                 break;
             case 2:
 

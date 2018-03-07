@@ -42,16 +42,22 @@ public class Enemy : MonoBehaviour
 
     // private transform for the goal postion of the enemy.
     private Transform m_tGoal;
-
+    
     // private int for the current health of the enemy
-    [HideInInspector]
+    [HideInInspector]                                           // Edited By: Angus
     public int m_nHealth;
 
     // private gameobject for the player object
     private GameObject m_gPlayer;
 
-    //Private stat class.
-    private PlayerStats m_playerStats;
+    // private PlayerStats for the stat class of player.
+    private PlayerStats m_pPlayerStats;
+
+    // the enemy animator
+    private Animator m_aAnimator;
+
+    // boolean for an animation of the enemy death
+    public bool m_bDeathAni;
     //--------------------------------------------------------------------------------------
 
     //--------------------------------------------------------------------------------------
@@ -69,16 +75,23 @@ public class Enemy : MonoBehaviour
         m_nmAgent.baseOffset = m_fHoverHeight;
 
         // get player object
-        m_gPlayer = GameObject.FindGameObjectWithTag("Player");
-
-        m_playerStats = m_gPlayer.GetComponent<PlayerStats>();
-
+        m_gPlayer = GameObject.FindGameObjectWithTag("Mechboy");
+        
+        // get the player stats component
+        m_pPlayerStats = m_gPlayer.GetComponent<PlayerStats>();
+        
         // if valid player
         if (m_gPlayer)
         {
             // set goal to player transform
             m_tGoal = m_gPlayer.transform;
         }
+
+        // Get the component of the animator
+        m_aAnimator = GetComponent<Animator>();
+
+        // set the deafult for the death animation
+        m_bDeathAni = false;
     }
 
     //--------------------------------------------------------------------------------------
@@ -109,7 +122,19 @@ public class Enemy : MonoBehaviour
     public void SetHealth(int nHealth)
     {
         // set health
-        m_nHealth = nHealth;
+        m_nHealth += nHealth;
+    }
+
+    //--------------------------------------------------------------------------------------
+    // SetMaxHealth: Set the max health of the enemy
+    //
+    // Param:
+    //      nHealth: int value for setting health
+    //--------------------------------------------------------------------------------------
+    public void SetMaxHealth(int nHealth)
+    {
+        // set health
+        m_nMaxHealth = nHealth;
     }
 
     //--------------------------------------------------------------------------------------
@@ -147,13 +172,17 @@ public class Enemy : MonoBehaviour
         // if no health
         if (m_nHealth <= 0)
         {
+            // play death animation
+            m_bDeathAni = true;
+
             // set inactive when dead
             gameObject.SetActive(false);
-
-       
-
+            
             // set health back to full
             m_nHealth = m_nMaxHealth;
+
+            // reset death animation for next death
+            m_bDeathAni = false;
 
             // return true
             return true;
@@ -168,19 +197,19 @@ public class Enemy : MonoBehaviour
     //
     // Param:
     //      collision: The object that has been collided with.
+    //
+    // Edited By:
+    //      Angus
     //--------------------------------------------------------------------------------------
     private void OnCollisionEnter(Collision collision)
     {
         // if the collison is with the player.
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Mechboy")
         {
             // set health of the enemy to 0
             m_nHealth = 0;
 
-            // damage the player
-            //m_gPlayer.mechHealth =- m_nDamage;                                                // UNCOMMENT ONCE MERGED
-            //m_gPlayer.Score =- m_nScoreValue;                                                 // UNCOMMENT ONCE MERGED
-            m_playerStats.health = -m_nDamage;
+            m_pPlayerStats.health = -m_nDamage;
 
         }
 
@@ -200,13 +229,8 @@ public class Enemy : MonoBehaviour
             if(m_nHealth < 0)
             {
                 //Add 10 points to score.
-                m_playerStats.score += 10;
+                m_pPlayerStats.score += 10;
             }
-
-            // set health of the enemy by the bullet damage.
-            //m_nHealth =- gBullet.Damage;                                                       // UNCOMMENT ONCE MERGED
-            //m_gPlayer.Score += m_nScoreValue;                                                  // UNCOMMENT ONCE MERGED
-
         }
     }
 }
